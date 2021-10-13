@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1>Mon panier</h1>
+            <?php if(empty($basket)): ?>
+                <p class="empty_basket">Vous n'avez rien dans votre panier</p>
+                <div class="to_shop">
+                    <a href="shop.php">Boutique</a>
+                </div>
+            <?php endif; ?>
+            <section class="basket_section">
+                <?php for($i = 0; $i<count($basket); $i++): ?>
+                    <div class="product_basket">
+                        <div class="product_img">
+                            <img src="application/views/images/product/<?= htmlspecialchars($basket[$i]['image']) ?>">
+                        </div>
+                        <div class="order_info">
+                            <p><?= htmlspecialchars($basket[$i]['name']) ?></p>
+                            <p>Quantité : <?= htmlspecialchars($_SESSION['basket'][$i]['quantity']) ?></p>
+                            <p>Prix unitaire : <?= htmlspecialchars($basket[$i]['price']) ?> €</p>    
+                        </div>
+                        <div class="total_price">
+                            <div>
+                                <p> <?= htmlspecialchars($_SESSION['basket'][$i]['quantity']) * htmlspecialchars($basket[$i]['price']) ?> €</p>
+                            </div>
+                        </div>
+                        <div class="delete_product">
+                            <div >
+                                <a href="deleteBasket.php?id=<?= $basket[$i]['id'] ?>"><i class="fas fa-trash-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endfor;  ?>
+                <?php if(!empty($basket)): ?>
+                    <div class="total_order">
+                        <p>Total : <?= $total ?> €</p>
+                    </div>
+                    <div class="validate_btn">
+                        <a class="validate_order" href="validateBasket.php">Valider la commande</a>
+                    </div>
+                <?php endif;  ?>
+            </section>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </body>
+</html>

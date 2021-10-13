@@ -1,0 +1,993 @@
+body{background:#525151;
+    margin:0;
+}
+
+p{margin:0;
+}
+
+main{width:80%;
+    margin:auto;
+    background:darkgray;
+    padding: 15px;
+    font-family:Calibri, sans-serif; 
+}
+
+h1{text-align:center;
+}
+
+h5{margin:0;
+    text-align: center;
+}
+
+section{min-height: 300px;
+}
+
+.bold{font-weight: bold;
+}
+
+/*  Header   */ 
+
+
+header{background:#e0625c; 
+    height:100px;
+    display:flex;
+    padding:15px;
+}
+
+a{text-decoration:none;
+    color:black;
+}
+
+.header_div{display:flex;
+    width:80%;
+    margin:auto;
+}
+
+.header_left{text-align: center;
+    width: 20%;
+    font-size:1.7em;
+    font-family: 'Yellowtail', cursive;
+}
+
+.header_middle{text-align:center;
+    width:55%;
+    display:flex;
+    justify-content:center;
+    font-family:Calibri, sans-serif;
+}
+
+.header_middle div{width:20%;
+}
+
+.header_middle div a{display:flex;
+    flex-direction:column;
+    justify-content:center;
+    font-size:1.1em;
+}
+
+.header_middle div a:hover, .header_left a:hover{transition-duration: .5s;
+    color:white;
+}
+
+.header_right{width:25%;
+}
+
+.phone_nav_btn, .phone_nav {display: none;
+}
+
+.phone_nav_btn:hover{cursor: pointer;
+}
+
+.header_research{margin:0 10px;
+    text-align: center;
+}
+
+#header_research{width:80%;
+    border-radius:20px;
+    font-size: 1em;
+}
+/* pour garder la mise en forme   */ 
+.nb_items{color:red;
+    font-weight:bold;
+    background:white;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    margin:auto;
+    line-height: 1.1em;
+}
+
+.nb_items_hidden{color:red;
+    font-weight:bold;
+    background:#e0625c;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    margin:auto;
+    line-height: 1.1em;
+}
+
+
+/*  Index  */
+
+.index_section, .shop_section{display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+
+.index_section div,.shop_section div, form div{display: flex;
+    width: 30%;
+    flex-direction: column;
+    margin:10px;
+    border-radius:20px;
+}
+
+.index_section div a, .shop_section div a{transition:transform 0.5s;
+}
+.index_section div a:hover, .shop_section div a:hover{transform:scale(1.1);
+}
+
+.display_recipe p{font-size:1.5em; 
+    text-align:center;
+    margin: auto;
+    background: #e0625c;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0 0 15px 15px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.display_recipe img, .display_product img{height:225px;
+    margin:auto;
+    display: block;
+    border-radius: 15px 15px 0 0;
+}
+
+.display_recipe img{width:100%;
+}
+
+.display_product img{max-width:100%;
+}
+
+/*    Login  */
+
+/*  obliger d'utiliser une id car la classe n'ecrase pas la border noir du picture, sont ajouter en js */
+#red_border, .red_border{border:solid red 2px;
+}
+
+#login_form, #registration_form{margin:auto;
+    width:50%;
+    font-size: 1.3em;
+}
+
+form div{margin-bottom:20px;
+    width:90%
+}
+
+.label_password, .hide_show{display:flex;
+    justify-content:space-between;
+    flex-direction:row;
+    margin:0;
+}
+
+.hide_show{width:20%;
+}
+
+.label_password div{margin:0;
+}
+
+.password_show, .password_hide{margin:0;
+    font-size:0.6em;
+    padding-top:8px;
+}
+
+.hide p, .show p{display: flex;
+    justify-content: right;
+}
+
+.hide_show:hover{cursor: pointer;
+    color:red;
+}
+
+.password_display{display:none;
+}
+
+.hide_show i{margin-left:5px;
+}
+
+small{margin-bottom: 4px;
+    font-size:0.5em;
+}
+
+form button{border-radius:10px;
+    background:#e0625c;
+    color:white;
+    padding:5px 10px;
+    font-size:1.2em;
+    cursor: pointer;
+}
+
+form input{font-size: 0.8em;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid 1px #80808040;
+}
+
+.to_registration a{background: black;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    min-height: 35px;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.error_small{display:flex;
+    justify-content:center;
+}
+
+.error_small small{color:red;
+    text-align:center;
+    font-size:.7em;
+}
+
+.recipe_info{font-size: 1.2em;
+}
+
+.recipe_info ol{width:50%;
+    margin: 15px auto;
+}
+
+.recipe_info p {margin: 5px;
+    text-align: right;
+}
+
+
+/*  Shop  */
+
+.research{width: 60%;
+    margin: 10px auto;
+    padding:0;
+}
+
+#research{width: 100%;
+    border-radius: 20px;
+    font-size: 1.3em;
+    padding:5px 15px;
+}
+
+.display_product a{background:white;
+    border-radius: 15px
+}
+
+.display_product p{text-align:center;
+    font-size:1.4em;
+    background-color: #e0625c;
+}
+
+.display_product a p:nth-child(3){border-radius: 0 0 15px 15px;
+    padding-bottom: 5px;
+}
+
+.display_recipe a, .display_product a{margin:auto;
+    width:100%;
+}
+
+.wrong_search p{text-align:center;
+    color:red;
+}
+
+/*   Product   */
+
+.product_section{display:flex;
+    font-size: 1.2em;
+}
+
+.product_left{width:50%;
+    display: flex;
+    justify-content: center;
+    background: white;
+    height: 400px;
+    margin-left: 10px;
+}
+
+.product_left img{max-height:100%;
+    max-width:100%;
+    margin: auto;
+}
+
+.product_right{padding:0 20px;
+    width:50%;
+}
+
+.product_right h2{text-align:center;
+    margin: 10px;
+}
+
+.product_price{margin:20px;
+    font-size:2em;
+    text-align:center;
+}
+
+.product_right p{margin:10px;
+}
+
+.quantity_container{width: 35%;
+    margin:auto;
+}
+
+.add_basket_form{width:80%;
+    display:flex;
+    flex-direction:column;
+    margin:auto;
+}
+
+.quantity_container label{line-height:1.5em;
+    text-align:center;
+    font-size:1.3em;
+}
+
+#quantity{margin:auto;
+    width:20%;
+    font-size:1.2em;
+    text-align:center;
+}
+
+#add_basket{background: #e0625c;
+    color: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 40%;
+    font-size:1.2em;
+    cursor:pointer;
+    margin:5px auto;
+}
+
+/*    AddRecipe   */
+
+.add_recipe_form, .add_product_form{width:50%;
+    margin:auto;
+    border:solid 2px;
+    border-radius:20px;
+    background:lightgrey;
+    padding:10px;
+    font-size:1.3em;
+}
+
+.step_recap, .ingredients_recap{margin: 5px;
+}
+
+.add_recipe label{text-align:center;
+}
+
+.all_ingredients{width:90%;
+    border-radius:10px;
+    flex-direction:row;
+    margin:0;
+    margin-top:5px;
+}
+
+.add_recipe h5{margin:5px;
+}
+
+.recipe_mistake{text-align:center;
+    color:red;
+    margin:0;
+}
+
+.all_ingredients input{text-align:center; 
+}
+
+.all_ingredients label{font-size:0.8em;
+}
+
+.unit, .add_recipe_quantity{width:20%;
+}
+
+.step{margin:5px;
+}
+
+.add_ingredients, .add_step, .add_direction, .add_description{justify-content:flex-end;
+    display:flex;
+    flex-direction:row;
+    margin:0;
+}
+
+.add_ingredients_btn,.add_step_btn, .add_description_btn{background:#e0625c;
+    font-size:0.8em;
+    width:40%;
+    cursor:pointer;
+}
+
+.table_quantity, .table_unit{text-align:center;
+    width:15%;
+}
+
+.recipe_direction{padding-bottom:8px;
+}
+
+#recipe_step, #product_descriptions{margin:auto;
+    width:100%;
+    font-size:1em;
+    border-radius:10px;
+    height: 80px;
+}
+
+.explanation{width:80%;
+}
+
+.table_delete{width:10%;
+    color:red;
+}
+
+.fa-times{cursor: pointer;
+}
+
+.add_picture{padding:5px;
+    border: solid 1px;
+    background: #eaeaea;
+}
+
+.add_picture label{cursor: pointer;
+    text-align:center;
+}
+
+.add_picture input{display:none;
+}
+
+.add_picture .fa-check{padding-left: 5px;
+    display: none;
+    color: green;
+}
+ 
+
+/* confirmRecipe */
+
+.confirm_recipe{font-size: 1.2em;
+}
+
+.confirm_recipe h2{text-align:center;
+}
+
+.confirm_recipe p{text-align:center;
+}
+
+.recipe{display:flex;
+}
+
+.recipe div{width:50%;
+}
+
+.ingredients ul{width: 60%;
+    margin: 5px auto;
+}
+
+.recipe li{text-align:left;
+}
+
+.direction ol{margin: 5px ;
+}
+
+.back_to_index{display:flex;
+    margin: 15px;
+}
+
+.back_to_index button{border-radius: 10px;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.2em;
+    margin:auto;
+}
+
+.back_to_index_btn a{color:white;
+}
+
+.back_to_index_btn a:visited{text-decoration:none;
+}
+
+
+/*  Basket   */
+
+.empty_basket{font-size: 1.2em;
+    text-align:center;
+}
+
+.to_shop{display:flex;
+}
+
+.to_shop a{background: #e0625c;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    line-height: 2em;
+    margin:10px auto;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.basket_section{font-size:1.6em;
+    width: 90%;
+    margin: auto;
+}
+
+.product_basket{margin: 5px;
+    display: flex;
+}
+
+.product_basket div{margin: auto;
+}
+
+.product_img{width: 25%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.basket_section img{height: 150px;
+    width: auto;
+    max-width: 100%;
+}
+
+.order_info, .total_price, .delete_product {display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.order_info{width: 35%;
+}
+
+.total_price{width: 20%;
+}
+
+.product_basket .delete_product{margin: 0;
+    width: 2%;
+}
+
+.validate_btn{margin: 5px;
+    display: flex;
+}
+
+.fa-trash-alt{margin:auto;
+    cursor: pointer;
+    color:#484848;
+}
+
+.total_order p {text-align:right;
+    font-weight:bold;
+    font-size: 1.2em;
+    padding-right: 50px;
+}
+
+.validate_order{background: #e0625c;
+    padding: 10px 5px;
+    border-radius: 20px;
+    color: white;
+    line-height: 1.5em;
+    margin:auto;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.basket_section .validate_order{color:white;
+    text-decoration:none;
+}
+
+/*  validateBasket    */ 
+
+.validation_message{text-align:center;
+    font-size:1.7em;
+    height:300px;
+}
+
+.validation_message p{margin:35px;
+}
+
+.validation_message a{background: #e0625c;
+    padding: 10px 5px;
+    border-radius: 20px;
+    color: white;
+    line-height: 2em;
+    text-decoration:none;
+    margin:50px;
+}
+
+/*   Admin   */
+
+.admin_section{display:flex;
+}
+
+.admin_aside{max-width:170px;
+    border-right:solid black 5px;
+    font-size:1.8em;
+    background:lightgrey;
+    margin-right:15px;
+}
+
+.admin_nav div{padding:10px;
+}
+
+.admin_nav div:hover{transition-duration: .5s;
+    background:black;
+    color:white;
+}
+
+.admin_aside li{list-style-type: none;
+}
+
+.admin_users, .admin_users table{width:100%;
+}
+
+.admin_users table{text-align:center;
+}
+
+.admin_more{cursor:pointer;
+    font-size:1.3em;
+    font-weight:bold;
+    width: 2%;
+}
+
+.admin_more a:hover{transition-duration: .5s;
+    color:green;
+}
+
+.admin_users table{font-size:1.4em;
+}
+
+
+/* User  */
+
+.user_section{display: flex;
+}
+
+.user_info{font-size:1.3em;
+    overflow:auto;
+    width:100%;
+}
+
+.user_info div{display:flex;
+}
+
+.user_info div p{overflow:auto;
+}
+
+.user_info div p:first-child{width:200px;
+}
+
+.admin_validation {text-align: right;
+    padding-right: 10px;
+    margin-top:10px;
+}
+
+
+/* adminRecipes */
+
+.admin_recipes, .admin_shop {width: 100%;
+    margin:auto;
+    font-size: 1.2em;
+}
+
+.admin_recipes table{text-align: center;
+    width: 85%;
+    margin: auto;
+    font-size: 1.4em;
+}
+
+.admin_picture{height:auto;
+    width:150px;
+}
+
+
+/*  adminRecipe  */ 
+
+.recipe_left{display: flex;
+    width: 50%;
+}
+
+.recipe_img{margin: auto;
+    width: 90%;
+    max-height: 350px;
+}
+
+.img_ingredients{display:flex;
+    margin: auto 15px;
+}
+
+.recipe_bottom ol li{margin:5px;
+}
+
+.admin_recipes p {margin:5px;
+    text-align:right;
+}
+
+/* adminProduct   */
+
+.admin_product{display: flex;
+    width: 100%;
+    font-size: 1.2em;
+}
+
+.pos_right{text-align: right;
+}
+/* adminShop   */
+
+.add_product_btn{text-align: right;
+}
+
+.add_product_btn a{background: #e0625c;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    line-height: 2em;
+    margin: 10px auto;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.admin_products{font-size: 1.4em;
+}
+
+.admin_products p{text-align: center;
+}
+
+.one_product, .one_product_top{display: flex;
+    margin: 5px;
+}
+
+.one_product div{margin: auto;
+}
+
+.picture_product{width: 20%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.name_product{width: 25%;
+}
+
+.price_product{width: 20%;
+}
+
+.validate_product{width: 15%;
+}
+
+.admin_picture_shop{height: 140px;
+    width: auto;
+    max-width: 100%;
+}
+
+#product_price{width: 10%;
+    text-align: center;
+}
+
+/*  Responsive  */
+
+@media only screen and (max-width: 960px){
+
+    header{height:150px;
+    }
+
+    .header_research{width: 50%;
+    }
+
+    .header_left{font-size: 2em;
+        padding-bottom: 10px;
+    }
+
+    .header_div{display: block;
+    }
+
+    .header_div div{width: 100%;
+    }
+
+    .header_right{display: flex;
+        justify-content: center;
+    }
+
+    .nb_items{margin-bottom: 5px;
+    }
+
+    .recipe_info ol{width:80%;
+    }
+
+    .index_section div,.shop_section div{width: 45%;
+    }
+
+    .admin_section{display: block;
+    }
+
+    .admin_aside{margin-bottom: 10px;
+        max-width: 100%;
+        border:none;
+        margin-right:0;
+        padding: 5px 0;
+    }
+
+    .admin_nav{display: flex;
+        justify-content: space-around;
+    }
+
+    #quantity{width: 40%;
+    }
+
+    #add_basket{width: 70%;
+    }
+
+    .add_recipe_form, .add_product_form{width: 80%;
+    }
+
+    #login_form, #registration_form{width: 60%;
+    }
+
+    .basket_section{width: 100%;
+    }
+
+    .total_price{border-left: solid 2px black;
+        border-right: solid 2px black;
+    }
+
+    .ingredients ul{width: 90%;
+    }
+}
+
+@media only screen and (max-width: 760px){
+/* retire certaines info pour la lisibilité */
+    .admin_users table th:nth-child(3), .admin_users table th:nth-child(4),
+    .admin_users table td:nth-child(3), .admin_users table td:nth-child(4){
+        display: none;
+    }
+
+    .admin_picture_shop, .basket_section img{height: 100px;
+    }
+
+    .basket_section{font-size: 1.2em;
+    }
+
+    .add_recipe_form, .add_product_form{width: 90%;
+    }
+
+    .order_info{width: 40%;
+    }
+
+    .admin_product, .product_section{flex-direction: column;
+    }
+
+    .product_left{margin: auto;
+        height: 250px;
+    }
+
+    .product_right{width: 100%;
+    }
+
+    #login_form, #registration_form{width: 75%;
+    }
+
+    .recipe{flex-direction: column;
+    }
+
+    .recipe div{width: 100%;
+    }
+    
+    .user_info{padding:0;
+    }
+    
+    .user_info div{flex-direction:column;
+        margin:15px;
+    }
+    
+    .user_info div p{text-align:center;
+        overflow:auto;
+    }
+    
+    .user_info div p:first-child{font-weight:bold;
+        width:auto;
+    }
+    
+    .admin_recipes table{font-size:1.2em;
+        width:100%;
+    }
+    
+    .admin_products{font-size: 1em;
+    }
+    
+}
+
+@media only screen and (max-width: 550px){
+
+    main{width:85%;
+    }
+
+    .header_middle{display: none;
+    }
+    
+    header{min-height: 100px;
+    }
+
+    .header_right .phone_nav_btn{display: flex;
+        width: 10%;
+        margin: auto;
+    }
+
+    /* change le display avec du JS   */
+    .header_div .phone_nav{display: none;
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        margin: auto;
+        text-align: left;
+        background-color: lightgrey;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 1.5em;
+    }
+
+    .header_div .phone_nav ul{margin: 15px 0;
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .header_div .phone_nav ul li{padding: 15px;
+    }
+
+    .header_div .phone_nav ul li:hover{background-color: honeydew;
+    }
+    
+    .header_div .phone_nav .fas{margin:5px;
+    }
+    
+    .header_right .phone_nav_btn i{font-size: 2em;
+    }
+
+    .header_right ._btn:hover{cursor: pointer;
+    }
+
+    .header_research{width: 80%;
+    }
+
+    .index_section div, .shop_section div {width: 90%;
+    }
+
+    .img_ingredients{flex-direction: column;
+    }
+
+    .recipe_left{width: 100%;
+        margin: auto;
+    }
+    
+    .recipe_bottom ol{padding:15px;
+    }
+
+    .all_ingredients{flex-wrap: wrap;
+    }
+
+    .add_recipe_quantity, .unit{margin: auto;
+    }
+
+    .price_product{display: none;
+    }
+
+    .nb_items{width:25px;
+        height:25px;
+        display: inline-block;
+        text-align: center;
+        line-height: 1.1em;
+    }
+    
+    .admin_aside{font-size:1.3em;
+    }
+    
+    .admin_picture{width:100px;
+    }
+    
+    .picture_product{width: 25%;
+    }
+    
+    .add_ingredients_btn,.add_step_btn, .add_description_btn{width:50%;
+    }
+}
+

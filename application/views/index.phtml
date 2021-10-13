@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php  include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1>Mes recettes !</h1>
+            <section class="index_section">
+                <?php foreach($recipes as $recipe): ?>
+                <div class="display_recipe">
+                    <a href="recipe.php?id=<?= $recipe['id'] ?>" >
+                        <img src="application/views/images/recipe/<?= htmlspecialchars($recipe['picture']) ?>">
+                        <p><?= htmlspecialchars(ucfirst ($recipe['recipe_name']))?></p>
+                    </a>
+                </div>
+                <?php endforeach; ?>
+            </section>
+        </main>
+    </body>
+</html>

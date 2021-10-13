@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+      <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+           <h1>Recettes</h1>
+            <section class="admin_section">
+                <aside class="admin_aside">
+                    <?php include 'templates/admin_aside.phtml'; ?>
+                </aside>
+                <div class="admin_recipes">
+                    <table class="admin_recipes_table">
+                        <thead>
+                            <tr>
+                                <th> Photo</th>
+                                <th> Nom</th>
+                                <th>Valide</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($recipes as $recipe): ?>
+                                <tr>
+                                    <td><img class="admin_picture" src="application/views/images/recipe/<?= $recipe['picture'] ?>"></td>
+                                    <td><?= htmlspecialchars(ucfirst($recipe['recipe_name'])) ?></td>
+                                    <td><?php if($recipe['validate'] == true): echo 'Oui'; else: echo'Non'; endif;  ?></td>
+                                    <td class="admin_more"><a href="adminRecipe.php?id=<?= $recipe['id'] ?>"><i class="fas fa-plus"></i></a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+           </section>          
+        </main>
+    </body>
+</html>

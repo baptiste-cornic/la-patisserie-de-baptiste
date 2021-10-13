@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <section class="confirm_recipe">
+                <h1>Confirmation de votre recette</h1>
+                <p>Merci de nous partager votre recette.</p>
+                <p>L'un de nos chef patissier la testera au plus vite afin de la valider et de pouvoir l'afficher sur notre site. </p>
+                <h2><?= ucfirst(htmlspecialchars($post['recipe_name'])) ?></h2>
+                <div class="recipe">
+                    <div class="ingredients">
+                        <ul>
+                            <?php foreach($ingredients as $ingredient): ?>
+                                <li><?= htmlspecialchars(ucfirst ($ingredient[0])) ?>
+                                    <?= htmlspecialchars(ucfirst ($ingredient[1])) ?>
+                                    <?= htmlspecialchars(ucfirst ($ingredient[2])) ?>
+                                </li>
+                              <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <div class="direction">
+                        <ol>
+                            <?php foreach($steps as $step): ?>
+                                <li><?= htmlspecialchars(ucfirst ($step)) ?></li>
+                            <?php endforeach; ?>
+                        </ol>
+                    </div>
+                </div>
+                <div class="back_to_index">
+                    <button class="back_to_index_btn"><a href="index.php">Retour a l'accueil</a></button>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

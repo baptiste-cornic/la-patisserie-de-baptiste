@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+           <h1>Utilisateurs</h1>
+           <section class="admin_section">
+           <aside class="admin_aside">
+               <?php include 'templates/admin_aside.phtml'; ?>
+           </aside>
+           <div class="admin_users">
+               <table>
+                   <thead>
+                       <tr>
+                            <th> Nom</th>
+                            <th> Prénom</th>
+                            <th>Ville</th>
+                            <th>Téléphone</th>
+                            <th>Admin</th>
+                            <th></th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                       <?php foreach($users as $user) : ?>
+                           <tr>
+                               <td><?= ucwords(htmlspecialchars($user['lastname'])) ?></td>
+                               <td><?= ucwords(htmlspecialchars($user['firstname'])) ?></td>
+                               <td><?= ucwords(htmlspecialchars($user['city'])) ?></td>
+                               <td><?= htmlspecialchars($user['phone']) ?></td>
+                               <td><?php if($user['admin'] == true): echo 'Oui'; else : echo 'Non'; endif; ?></td>
+                               <td class="admin_more"><a href="user.php?id=<?= $user['id'] ?>"><i class="fas fa-plus"></i></a></td>
+                           </tr>
+                       <?php endforeach;  ?>
+                   </tbody>
+               </table>
+           </div>
+           </section>
+        </main>
+    </body>
+</html>

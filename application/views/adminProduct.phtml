@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1><?= ucfirst(htmlspecialchars($product[0]['name'])) ?></h1>
+            <section class="admin_section">
+                <aside class="admin_aside">
+                    <?php include 'templates/admin_aside.phtml'; ?>
+                </aside>
+                <div class="admin_product">
+                    <div class="product_left">
+                        <img src="application/views/images/product/<?= htmlspecialchars($product[0]['image']) ?>">
+                    </div>
+                    <div class="product_right">
+                        <?php foreach($product as $description): ?>
+                            <p class="product_description"><?= $description['description'] ?></p>
+                        <?php endforeach; ?>
+                        <p class="product_price"><?= $product[0]['price'] ?> €</p>
+                        <p class="pos_right"> 
+                            <a href="productUpdate.php?id=<?= $id ?>">Valide : <?php if($product[0]['validate']== true): echo 'Oui'; else: echo 'Non'; endif; ?>
+                            <i class="fas fa-pen"></i></a>
+                        </p>
+                        <p class="pos_right"><a href="deleteProduct.php?id=<?= $id ?>">Supprimer <i class="fas fa-trash-alt"></i></a></p>
+                    </div>     
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

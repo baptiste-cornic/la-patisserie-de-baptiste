@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+       <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1><?= ucfirst(htmlspecialchars($recipe[0]['recipe_name'])) ?></h1>
+            <section class="admin_section">
+                <aside class="admin_aside">
+                    <?php include 'templates/admin_aside.phtml'; ?>
+                </aside>
+                <div class="admin_recipes">
+                    <div class="img_ingredients">
+                        <div class="recipe_left">
+                            <img class="recipe_img" src="application/views/images/recipe/<?= htmlspecialchars($recipe[0]['picture']) ?>"></img>
+                        </div>
+                        <div class="recipe_right">
+                            <ul>
+                                <?php foreach($recipe[1] as $ingredient): ?>
+                                <li>
+                                    <?php if($ingredient['quantity'] > 0): echo  htmlspecialchars($ingredient['quantity']); endif;?> 
+                                    <?= htmlspecialchars($ingredient['unit']) ?>
+                                    <?= htmlspecialchars(ucfirst($ingredient['ingredient_name'])) ?>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div> 
+                    <div class="recipe_bottom"> 
+                        <ol>
+                            <?php foreach($recipe[2] as $step): ?>
+                                <li><?= htmlspecialchars(ucfirst ($step['step'])) ?></li>
+                            <?php endforeach; ?>                      
+                        </ol>
+                        <p>Recette de <em><?= htmlspecialchars(ucwords($recipe[0]['lastname'])) ?> <?= htmlspecialchars(ucwords($recipe[0]['firstname'])) ?></em></p>
+                        <a href="recipeUpdate.php?id=<?= $id ?>">
+                            <p>Valide : <?php if($recipe[0]['validate']== true): echo 'Oui'; else: echo 'Non'; endif; ?>
+                            <i class="fas fa-pen"></i>
+                            </p>
+                        </a>
+                        <p><a href="deleteRecipe.php?id=<?= $id ?>">Supprimer <i class="fas fa-trash-alt"></i></a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

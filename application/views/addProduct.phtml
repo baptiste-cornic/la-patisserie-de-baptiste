@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+       <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1>Ajouter un produit</h1>
+            <section class="admin_section">
+                <aside class="admin_aside">
+                    <?php include 'templates/admin_aside.phtml'; ?>
+                </aside>
+                <form class="add_product_form" action="insertProduct.php" method="post" enctype="multipart/form-data">
+                    <div class="product_name">
+                        <label for="product_name">Nom du produit</label>
+                        <input type="text" id="product_name" name="product_name">
+                    </div>     
+                    <div class="product_price_form">
+                        <label for="product_price">Prix du produit (en €)</label>
+                        <input type="text" id="product_price" name="product_price">
+                    </div>        
+                    <div class="product_descriptions">
+                        <label for="product_descriptions">Descriptif du produit</label>
+                        <textarea name="product_descriptions" id="product_descriptions" ></textarea>
+                    </div>   
+                    <div class="add_description">
+                        <button type="button" class="add_description_btn">Ajouter une description</button>
+                    </div>
+                    <div class="description_recap">
+                        <table>
+                            <tbody class="insert_description">
+                                <!--  complété en JS     -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="add_picture">
+                        <label for="picture">Ajouter une photo<i class="fas fa-check check_picture"></i></label>
+                        <input accept=".png, .jpg, .jpeg" type="file" name="picture" id="picture">
+                    </div>
+                    <div class="add_recipe_validate">
+                        <button class="btn_validate">Valider</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+        <script src="application/views/js/addProduct.js"></script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+       <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1><?= htmlspecialchars(ucfirst($recipe[0]['recipe_name'])) ?></h1>
+            <section class="recipe_info">
+                <div class="img_ingredients">
+                    <div class="recipe_left">
+                        <img class="recipe_img" src="application/views/images/recipe/<?= htmlspecialchars($recipe[0]['picture']) ?>">
+                    </div>
+                    <div class="recipe_right">
+                        <ul>
+                            <?php foreach($recipe[1] as $ingredient): ?>
+                            <li>
+                                <?php if($ingredient['quantity'] > 0): echo  htmlspecialchars($ingredient['quantity']); endif;?> 
+                                <?= htmlspecialchars($ingredient['unit']) ?>
+                                <?= htmlspecialchars(ucwords ($ingredient['ingredient_name'])) ?>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>          
+                <div class="recipe_bottom">
+                    <ol>
+                        <?php foreach($recipe[2] as $step): ?>
+                            <li><?= htmlspecialchars(ucfirst($step['step'])) ?></li>
+                        <?php endforeach; ?>
+                    </ol>
+                    <p>Recette de <em><?= htmlspecialchars(ucwords ($recipe[0]['lastname'])) ?> <?= htmlspecialchars(ucwords ($recipe[0]['firstname'])) ?></em></p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

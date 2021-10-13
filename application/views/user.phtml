@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1><?= htmlspecialchars(ucfirst($user['lastname'])) ?> <?= htmlspecialchars(ucfirst($user['firstname']))  ?></h1>
+            <section class="admin_section">
+                <aside class="admin_aside">
+                    <?php include 'templates/admin_aside.phtml'; ?>
+                </aside>
+                <div class="user_info">
+                    <div class="address">
+                        <p>Addresse </p>
+                        <p><?= htmlspecialchars($user['address']) ?></p>
+                    </div>
+                    <div class="city">
+                        <p>Ville </p>
+                        <p><?= htmlspecialchars(ucwords($user['city'])) ?></p>
+                    </div>
+                    <div class="zip_code">
+                        <p>Code postale </p>
+                        <p><?= htmlspecialchars($user['zip_code']) ?></p>
+                    </div>
+                    <div class="country">
+                        <p>Pays </p>
+                        <p><?= htmlspecialchars(ucwords($user['country'])) ?></p>
+                    </div>
+                    <div class="phone">
+                        <p>Téléphone </p>
+                        <p><?= htmlspecialchars($user['phone']) ?></p>
+                    </div>
+                    <div class="email">
+                        <p>Email </p>
+                        <p><?= htmlspecialchars($user['email']) ?></p>
+                    </div>
+                    <div class="inscription_date">
+                        <p>Date d'inscription </p>
+                        <p><?= htmlspecialchars($user['inscription_date']) ?></p>
+                    </div>
+                    <p class="admin_validation">Admin :  <?php if($user['admin'] == true): echo 'Oui'; else : echo 'Non'; endif; ?> <a href="userUpdate.php?id=<?= $user['id'] ?>"><i class="fas fa-pen"></i></a></p>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

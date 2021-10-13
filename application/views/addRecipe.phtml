@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1>Ajouter une recette</h1>
+            <form class="add_recipe_form" action="confirmRecipe.php" method="post" enctype="multipart/form-data">
+                <?php if(isset($_SESSION['recipe_mistake'])) : ?>
+                    <div class="recipe_mistake">
+                        <small><?= $_SESSION['recipe_mistake'] ?></small>
+                    </div>
+                <?php endif ?>
+                <div class="recipename">
+                    <label for="recipe_name">Nom de la recette</label>
+                    <input type="text" name="recipe_name" id="recipe_name"/>
+                </div>
+                <h5>Les ingrédients</h5>
+                <div class="all_ingredients">
+                    <div class="add_recipe_quantity">
+                        <label for="add_recipe_quantity">Quantité</label>
+                        <input type="text" id="add_recipe_quantity" name="add_recipe_quantity">
+                    </div>
+                    <div class="unit">
+                        <label for="unit">Unité</label>
+                        <input type="text" id="unit" name="unit">
+                    </div>
+                    <div class="ingredient_name">
+                        <label for="ingredient_name">Ingrédient</label>
+                        <input type="text" id="ingredient_name" name="ingredient_name">
+                    </div>
+                </div>
+                <div class="add_ingredients">
+                    <button type="button" class="add_ingredients_btn">Ajouter un ingrédient</button>
+                </div>
+                <div class="ingredients_recap">
+                    <table>
+                        <tbody class="insert_ingredients">
+                            <!--  complété en JS     -->
+                        </tbody>
+                    </table>
+                </div>
+                <h5>Etapes de fabrication</h5>
+                <div class="recipe_direction">
+                    <label for="recipe_step">Etapes</label>
+                    <textarea name="recipe_step" id="recipe_step"></textarea>
+                </div>
+                <div class="add_step">
+                    <button type="button" class="add_step_btn">Ajouter une étape</button>
+                </div>
+                <div class="step_recap">
+                    <table>
+                        <tbody class="insert_steps">
+                             <!--  complété en JS     -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="add_picture">
+                    <label for="picture">Ajouter une photo<i class="fas fa-check check_picture"></i></label>
+                    <input accept=".png, .jpg, .jpeg" type="file" name="picture" id="picture">
+                </div>
+                <div class="add_recipe_validate">
+                    <button class="btn_validate">Valider</button>
+                </div>
+            </form>
+        </main>
+        <script src="application/views/js/addRecipe.js"></script>
+    </body>
+</html>

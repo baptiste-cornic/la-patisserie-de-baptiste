@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1>Boutique</h1>
+            <form action="productSearch.php" method="get" class="research">
+                <input id="research" type="text" name="research" placeholder="Rechercher..."/>
+            </form>
+            <div class="wrong_search">
+                <p>
+                    <?php if(isset($noproducts)):
+                        echo $noproducts;
+                    endif ?>
+                </p>
+            </div>
+            <section class="shop_section">
+                <?php foreach($products as $product): ?>
+                    <div class="display_product">
+                        <a href="product.php?id=<?= $product['id'] ?>" >
+                            <img src="application/views/images/product/<?= htmlspecialchars($product['image']) ?>">
+                            <p><?= htmlspecialchars($product['name'])?></p>
+                            <p> <?= htmlspecialchars($product['price']) ?> € </p>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </section>
+        </main>
+    </body>
+</html>

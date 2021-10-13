@@ -1,0 +1,104 @@
+<?php if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+} ?>
+
+<div class="header_div">
+    <div class="header_left">
+        <a href="index.php">La pâtisserie de Baptiste</a>
+    </div>
+    <div class="header_middle">
+        <div class="add_recipe">
+            <a href="addRecipe.php"><i class="fas fa-book-open"></i><span>Proposer votre recette</span></a>
+        </div>
+        <div class="shop">
+            <a href="shop.php">
+                <i class="fas fa-shopping-cart"></i><span>Boutique</span>
+            </a>
+        </div>
+         <div class="header_basket">
+            <a href="basket.php">
+                <i class="fas fa-shopping-basket"></i>Mon panier 
+<!-- si il y a quelque chose affiche un nombre dans un rond sinon le rond sera quand meme afficher pour pas tous deplacer(meme couleur que le fond)-->
+                <?php if(empty($_SESSION['basket'])): ?>
+                    <span class="nb_items_hidden"></span>
+                <?php else : ?>
+                    <span class="nb_items">
+                        <?= count($_SESSION['basket']); ?>
+                    </span>
+                <?php endif; ?>
+            </a>
+        </div>
+        
+        <div class="header_connect_disconnect">
+            <?php if( isset($_SESSION['connected']) == true ) { ?>
+                <a href="disconnect.php">
+                    <i class="fas fa-user-alt"></i><span>Se déconnecter</span>
+                </a>
+            <?php } else { ?>
+                <a href="login.php">
+                    <i class="fas fa-user-alt"></i><span>Connexion</span>
+                </a>
+            <?php } ?>
+        </div>
+        <?php if(isset($_SESSION['user']) && $_SESSION['user']['admin'] == true): ?>
+            <div class="header_admin">
+                    <a href="admin.php"><i class="fas fa-user-cog"></i><span>Admin</span></a>
+            </div> 
+        <?php endif; ?>
+    </div>
+    
+    <div class="header_right">
+        <!-- Visible que pour les telephones pour ouvrir la nav -->
+        <div class="phone_nav_btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <form action="recipeSearch.php" method="get" class="header_research">
+            <input id="header_research" type="text" name="header_research" placeholder="Chercher une recette "/>
+        </form>
+    </div>
+    
+<!--  Visible uniquement pour les telephone  -->
+    <div class="phone_nav">
+        <nav>
+            <ul>
+                <a href="addRecipe.php">
+                    <li> <i class="fas fa-book-open"></i><span>Proposer votre recette</span></li>
+                </a>
+                <a href="shop.php" >
+                    <li><i class="fas fa-shopping-cart"></i><span>Boutique</span></li>
+                </a>
+                <a href="basket.php">
+                    <li><i class="fas fa-shopping-basket"></i>Mon panier 
+<!-- si il y a quelque chose affiche un nombre dans un rond sinon le rond sera quand meme afficher pour pas tous deplacer(meme couleur que le fond)-->
+                    <?php if(empty($_SESSION['basket'])): ?>
+                        <span class="nb_items_hidden"></span>
+                    <?php else : ?>
+                         <span class="nb_items">
+                            <?= count($_SESSION['basket']); ?>
+                        </span>
+                    <?php endif; ?>
+                    </li>
+                </a>
+                <?php if( isset($_SESSION['connected']) == true ) { ?>
+                    <a href="disconnect.php">
+                        <li><i class="fas fa-user-alt"></i><span>Se déconnecter</span></li>
+                    </a>
+                <?php } else { ?>
+                    <a href="login.php">
+                        <li><i class="fas fa-user-alt"></i><span>Connexion</span></li>
+                    </a>
+                <?php } ?>
+                <?php if(isset($_SESSION['user']) && $_SESSION['user']['admin'] == true): ?>
+                    <a href="admin.php">
+                        <li><i class="fas fa-user-cog"></i><span>Admin</span></li>
+                    </a>
+                <?php endif; ?>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<script src="application/views/js/phoneNav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+

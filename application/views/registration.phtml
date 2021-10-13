@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+       <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1>Inscription</h1>
+            <div class="error_small">
+                <small><?php if(isset($_SESSION['email_unavailable'])): echo "L'Email que vous avez rentré est indisponible."; endif; ?></small>
+            </div>
+            
+            <form id="registration_form" method="POST" >
+                <div class="firstname">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" name="firstname" id="firstname" value="<?php if(isset($_POST['firstname'])) echo $_POST['firstname'];  ?>"/>
+                </div>
+                <div class="lastname">
+                    <label for="lastname">Nom </label>
+                    <input type="text" name="lastname" id="lastname" value="<?php if(isset($_POST['lastname'])) echo $_POST['lastname'];  ?>" />
+                </div>
+                <div class="address">
+                    <label for="address">Adresse</label>
+                    <input type="text" name="address" id="address" value="<?php if(isset($_POST['address'])) echo $_POST['address'];  ?>"/>
+                </div>
+                <div class="city">
+                    <label for="city">Ville</label>
+                    <input type="text" name="city" id="city" value="<?php if(isset($_POST['city'])) echo $_POST['city'];  ?>"/>
+                </div>
+                <div class="zip_code">
+                    <label for="zip_code">Code postale</label>
+                    <input type="text" name="zip_code" id="zip_code" value="<?php if(isset($_POST['zip_code'])) echo $_POST['zip_code'];  ?>"/>
+                </div>
+                <div class="country">
+                    <label for="country">Pays</label>
+                    <input type="text" name="country" id="country" value="<?php if(isset($_POST['country'])) echo $_POST['country'];  ?>"/>
+                </div>
+                <div class="phone">
+                    <label for="phone">Téléphone</label>
+                    <input type="text" name="phone" id="phone" value="<?php if(isset($_POST['phone'])) echo $_POST['phone'];  ?>"/>
+                </div>
+                <div class="email">
+                    <label for="email">Adresse e-mail</label>
+                    <input type="text" name="email" id="email" value="<?php if(isset($_POST['email'])) echo $_POST['email'];  ?>"/>
+                </div>
+                <div class="password">
+                    <div class="label_password">
+                        <div>
+                            <label for="password">Mot de passe</label><small>Minimum 8 caractères</small>
+                        </div>
+                        <div class="hide_show">
+                            <div class="hide password_display">
+                                <p class="password_hide">Masquer <i class="fas fa-eye"></i></p>
+                            </div>
+                            <div class="show">
+                                <p class="password_show">Afficher <i class="fas fa-eye-slash"></i></p>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="password" name="password" id="password"/>
+                </div>
+                <div>
+                    <button>S'inscrire</button>
+                </div>
+          </form>
+          <script src="application/views/js/registrationForm.js"></script>
+        </main>
+    </body>
+</html>

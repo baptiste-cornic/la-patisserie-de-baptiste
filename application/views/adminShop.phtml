@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+        
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1>Boutique</h1>
+            <section class="admin_section">
+                <aside class="admin_aside">
+                    <?php include 'templates/admin_aside.phtml'; ?>
+                </aside>
+                <div class="admin_shop">
+                    <p class="add_product_btn"><a href="addProduct.php">Ajouter un produit</a></p>
+                    <div class="admin_products">
+                        <div class="one_product">
+                            <div class="picture_product">
+                                <!-- vide pour respecter la taille    -->
+                            </div>
+                            <div class="name_product">
+                                <p class="bold">Nom</p>
+                            </div>
+                            <div class="price_product">
+                                <p class="bold">Prix</p>
+                            </div>
+                            <div class="validate_product">
+                                <p class="bold">Valide</p>
+                            </div>
+                            <div class="admin_more">
+                                <!-- vide pour respecter la taille    -->
+                            </div>
+                        </div>
+                        <?php foreach($products as $product): ?>
+                            <div class="one_product">
+                                <div class="picture_product">
+                                    <img class="admin_picture_shop" src="application/views/images/product/<?= htmlspecialchars($product['image']) ?>">
+                                </div>
+                                <div class="name_product">
+                                    <p><?= htmlspecialchars($product['name']) ?></p>
+                                </div>
+                                <div class="price_product">
+                                    <p><?= htmlspecialchars($product['price']) ?> €</p>
+                                </div>
+                                <div class="validate_product">
+                                    <p><?php if($product['validate'] == true): echo 'Oui'; else: echo'Non'; endif;  ?></p>
+                                </div>
+                                <div class="admin_more">
+                                    <a href="adminProduct.php?id=<?= $product['id'] ?>"><i class="fas fa-plus"></i></a>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <?php include 'templates/head.phtml'; ?>
+    </head>
+    <body>
+        <header>
+            <?php  include 'templates/header.phtml'; ?>
+        </header>
+        <main>
+            <h1><?= $product[0]['name'] ?></h1>
+             <section class="product_section">
+                <div class="product_left">
+                    <img src="application/views/images/product/<?= htmlspecialchars($product[0]['image']) ?>">
+                </div>
+                <div class="product_right">
+                    <?php foreach($product as $description): ?>
+                        <p class="product_description"><?= $description['description'] ?></p>
+                    <?php endforeach; ?>
+                    <p class="product_price"><?= $product[0]['price'] ?> €</p>
+                    <form class="add_basket_form" action="addBasket.php" method="post">
+                        <div class="quantity_container">
+                            <label for="quantity">Quantité</label>
+                            <input id="quantity" type="text" name="quantity"/>
+                        </div>
+                        <input id="product_id" name="product_id" type="hidden" value="<?= $_GET['id'] ?>">
+                        <button id="add_basket">Ajouter au panier</button>
+                    </form>
+                </div>     
+            </section>
+            <script src="application/views/js/product.js"></script>
+        </main>
+    </body>
+</html>
